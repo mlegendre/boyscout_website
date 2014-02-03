@@ -1,0 +1,39 @@
+<div class="fill">
+  <div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <% pictures.each_index do |inx| %>
+        <li data-target="#myCarousel" data-slide-to=<%="#{inx}"%>></li>
+    <% end %>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="inner-item">
+          <%= image_tag "BSA Emblem.jpg" %>
+        </div>
+        <div class="carousel-caption">
+          <h1>Welcome to Troop 144's Home page</h1>
+        </div>
+      </div>
+      <% pictures.each do |i| %>
+
+          <div class="item">
+            <div class="inner-item">
+              <%= image_tag i %>
+            </div>
+          </div>
+        <%end%>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
+  </div>
+</div>

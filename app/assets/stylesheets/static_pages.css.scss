@@ -8,7 +8,23 @@
 
   img {
     margin: 0 auto;
-    height:600px;
-    width:600px;
+    height:400px;
+    width:auto;
+    overflow:hidden;
+  }
+
+
+}
+
+.carousel-caption{
+  color:black;
+}
+
+#main-nav {
+  text-align: center;
+  ul.nav{
+    float:none;
+    display:inline-block;
+
   }
 }
