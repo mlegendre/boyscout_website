@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def index
-    images_arry = Dir.glob('app/assets/images/*')
+    images_arry = Dir.glob('app/assets/images/carousel_images/*')
     @images = images_arry.map do |i|
       File.basename(i)
     end
