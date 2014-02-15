@@ -7,5 +7,8 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def forms
+    @forms = Forms.all
+  end
 
 end

@@ -1,0 +1,17 @@
+
+<h1>Forms page</h1>
+
+  <h3>You can fill out the following forms on your computer and then print it out.</h3>
+
+  <table class="table table-striped">
+    <th>Here are some documents</th>
+    <tr></tr>
+    <% @forms.each do |form| %>
+    <tr>
+      <td><%=form.name%></td>
+      <td><%=form.description%></td>
+      <td><%=link_to  'Click here', "/BSA_Forms/#{form.link}", :target => '_blank'%></td>
+    <%end%>
+
+  </table>
+

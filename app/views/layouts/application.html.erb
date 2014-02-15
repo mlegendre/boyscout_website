@@ -11,7 +11,7 @@
   <div class="container">
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Troop 144'  %></li>
+        <li><%= link_to 'Troop 144', '/' %></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
         <li><a href="#">Sign In/Login</a></li>
@@ -26,8 +26,10 @@
   </div>
 
   <div class="container">
-    <footer>
-      what up son
+    <footer class="navbar navbar-default navbar-static-bottom" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Home', '/' %></li>
+      </ul>
     </footer>
   </div>
 </body>
