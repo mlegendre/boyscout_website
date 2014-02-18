@@ -3,15 +3,22 @@
 
   <h3>You can fill out the following forms on your computer and then print it out.</h3>
 
+  <br />
+
   <table class="table table-striped">
-    <th>Here are some documents</th>
-    <tr></tr>
+    <thead>
+      <tr>
+        <td>Document</td>
+        <td>Description of document</td>
+        <td>Link to document</td>
+      </tr>
+    </thead>
     <% @forms.each do |form| %>
     <tr>
       <td><%=form.name%></td>
       <td><%=form.description%></td>
       <td><%=link_to  'Click here', "/BSA_Forms/#{form.link}", :target => '_blank'%></td>
     <%end%>
-
+    </tr>
   </table>
 
