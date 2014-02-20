@@ -11,15 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210190915) do
+ActiveRecord::Schema.define(version: 20140220154238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "badges", force: true do |t|
+    t.string   "description"
+    t.string   "name"
+    t.string   "link_to_badge_icon"
+    t.string   "link_to_badge_form"
+    t.string   "requirements"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "forms", force: true do |t|
     t.string   "description"
     t.string   "name"
     t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scouts", force: true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.integer  "age"
+    t.boolean  "rank"
+    t.boolean  "badges"
+    t.string   "city"
+    t.integer  "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
