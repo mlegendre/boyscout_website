@@ -11,4 +11,8 @@ class StaticPagesController < ApplicationController
     @forms = Forms.all
   end
 
+  def badges
+    @badges=Badges.all
+  end
+
 end

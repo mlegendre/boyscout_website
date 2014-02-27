@@ -6,28 +6,40 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+badge_location='badge_images'
+
+  badge_images_arry = Dir.glob('public/badge_images/*')
+  images = badge_images_arry.map do |i|
+    File.basename(i)
+  end
+
+images.each do |j|
+Badges.create(
+    name: j.gsub("_badge.jpg","").gsub("_", " ") ,
+    link_to_badge_icon: "#{badge_location}/#{j}",
+    link_to_badge_form: j.gsub("_badge.jpg",".pdf").gsub("_", "-"),
+    requirements: nil
+)
+end
 
 =begin
-  description_arry=[
-    'Activity consent form and approval by parents or legal Guardian',
-    'Youth Application',
-    'Adult Application',
-  ]
+badge_location='badge_images'
+PDF_FILLER=".pdf"
 
-  form_name=[
-    'Permission slip',
-    'Youth application',
-    'Adult application'
-  ]
+badge_images_arry = Dir.glob('public/badge_images/*')
+images = badge_images_arry.map do |i|
+  File.basename(i)
+end
 
-  link_to_form=%w[
-    'permission_slip.pdf',
-    'youth_application.pdf',
-    'adult_application.pdf'
-  ]
+images.each do |j|
+
+      name=j.gsub("_badge.jpg","").gsub("_", " ") ,
+      link_to_badge_icon="#{badge_location}/#{j}",
+      link_to_badge_form=j.gsub("_badge.jpg",".pdf").gsub("_", "-")
+
+      puts "#{name}"
+      puts "#{link_to_badge_icon}"
+      puts "#{link_to_badge_form}"
+
+end
 =end
-
-
-Forms.create(description: 'Activity consent form and approval by parents or legal Guardian',name: 'Permission slip',link: 'permission_slip.pdf')
-Forms.create(description: 'Youth Application',name: 'Youth application',link: 'youth_application.pdf')
-Forms.create(description: 'Adult Application',name: 'Adult application', link: 'adult_application.pdf')

@@ -1,0 +1,21 @@
+<h1>Boy Scout Badges</h1>
+<br />
+<table id="badge-table" class="table table-striped">
+  <tbody>
+  <% @badges.each_slice(4) do |slice|%>
+  <tr>
+    <%slice.each do |badge|%>
+    <td class="td-image"><%= image_tag "/#{badge.link_to_badge_icon}"%></td>
+    <%end%>
+  </tr>
+
+  <tr>
+    <%slice.each do |badge|%>
+    <td><%= "#{badge.name}" %></td>
+    <% end %>
+  </tr>
+
+  <% end %>
+  </tbody>
+
+</table>
