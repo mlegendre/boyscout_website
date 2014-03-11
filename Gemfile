@@ -10,7 +10,9 @@ gem 'debugger', group: [:development, :test]
 gem 'paperclip'
 gem 'ember-rails'
 gem 'ember-source', '1.4.0'
-
+gem 'google-api-client', :require => 'google/api_client'
+gem 'omniauth', '1.1.0'
+gem 'omniauth-google-oauth2', :git => 'https://github.com/zquestz/omniauth-google-oauth2.git'
 
 # rspec-rails environment
 group :development, :test do

@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#This will set up the barebones of the badges tables
+
+def badge_creation
 badge_location='badge_images'
 
   badge_images_arry = Dir.glob('public/badge_images/*')
@@ -13,33 +16,41 @@ badge_location='badge_images'
     File.basename(i)
   end
 
-images.each do |j|
-Badges.create(
-    name: j.gsub("_badge.jpg","").gsub("_", " ") ,
-    link_to_badge_icon: "#{badge_location}/#{j}",
-    link_to_badge_form: j.gsub("_badge.jpg",".pdf").gsub("_", "-"),
-    requirements: nil
-)
+  images.each do |j|
+    Badges.create(
+      name: j.gsub("_badge.jpg","").gsub("_", " ") ,
+      link_to_badge_icon: "#{badge_location}/#{j}",
+      link_to_badge_pdf_form: j.gsub("_badge.jpg",".pdf").gsub("_", "-"),
+      link_to_badge_docx_form: j.gsub("_badge.jpg",".docx").gsub("_", "-"),
+      requirements: nil
+    )
+ end
 end
 
-=begin
-badge_location='badge_images'
-PDF_FILLER=".pdf"
+#This will set up the barebones of the forms tables
+def forms_creation
+  forms_arry = Dir.glob('public/BSA_Forms/*')
+  forms = forms_arry.map do |i|
+    File.basename(i)
+  end
 
-badge_images_arry = Dir.glob('public/badge_images/*')
-images = badge_images_arry.map do |i|
-  File.basename(i)
+  forms.each do |f|
+    Forms.create(
+      name: f.gsub(".pdf"),
+      description: "",
+      link: 
+
+
+
+    )
+
+
+  end
+
+
 end
 
-images.each do |j|
 
-      name=j.gsub("_badge.jpg","").gsub("_", " ") ,
-      link_to_badge_icon="#{badge_location}/#{j}",
-      link_to_badge_form=j.gsub("_badge.jpg",".pdf").gsub("_", "-")
 
-      puts "#{name}"
-      puts "#{link_to_badge_icon}"
-      puts "#{link_to_badge_form}"
+badge_creation
 
-end
-=end

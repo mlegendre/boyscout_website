@@ -1,21 +1,29 @@
 <h1>Boy Scout Badges</h1>
 <br />
+
+ <!--TODO still need to create links to each badge requirements pdf or doc-->
 <table id="badge-table" class="table table-striped">
   <tbody>
   <% @badges.each_slice(4) do |slice|%>
   <tr>
     <%slice.each do |badge|%>
-    <td class="td-image"><%= image_tag "/#{badge.link_to_badge_icon}"%></td>
+    <td class="td-image"><%= link_to image_tag("/#{badge.link_to_badge_icon}"), "/Merit_badge_forms/worksheets-pdf/#{badge.link_to_badge_pdf_form}",  :target => '_blank' %></td>
     <%end%>
   </tr>
-
   <tr>
     <%slice.each do |badge|%>
-    <td><%= "#{badge.name}" %></td>
+    <td><%= link_to "#{badge.name}", "/Merit_badge_forms/worksheets-pdf/#{badge.link_to_badge_pdf_form}",  :target => '_blank' %></td>
     <% end %>
   </tr>
+  <tr>
+    <%slice.each do |badge|%>
+    <td><%=  link_to image_tag('other_images/15x18-fileicon-pdf.png',class:'icon') + ' PDF', "/Merit_badge_forms/worksheets-pdf/#{badge.link_to_badge_pdf_form}",  :target => '_blank' %>
+        |
+        <%=  link_to image_tag('other_images/icon-worddoc.png',class:'icon') + ' DOCX', "/Merit_badge_forms/worksheets-doc/#{badge.link_to_badge_docx_form}",  :target => '_blank' %>
+    </td>
 
+     <% end %>
+  </tr>
   <% end %>
   </tbody>
-
 </table>

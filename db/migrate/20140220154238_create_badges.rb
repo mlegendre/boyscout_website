@@ -4,7 +4,8 @@ class CreateBadges < ActiveRecord::Migration
       t.string :description
       t.string :name
       t.string :link_to_badge_icon
-      t.string :link_to_badge_form
+      t.string :link_to_badge_pdf_form
+      t.string :link_to_badge_docx_form
       t.string :requirements
 
       t.timestamps
