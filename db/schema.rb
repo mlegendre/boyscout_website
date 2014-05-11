@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220154238) do
+ActiveRecord::Schema.define(version: 20140509152732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20140220154238) do
     t.string   "link_to_badge_pdf_form"
     t.string   "link_to_badge_docx_form"
     t.string   "requirements"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.text     "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,6 +5,10 @@ class StaticPagesController < ApplicationController
     @images = images_arry.map do |i|
       File.basename(i)
     end
+
+    @events=Event.all
+
+
   end
 
   def forms
@@ -15,4 +19,4 @@ class StaticPagesController < ApplicationController
     @badges=Badges.all
   end
 
-end
+ end

@@ -38,16 +38,9 @@ def forms_creation
     Forms.create(
       name: f.gsub(".pdf"),
       description: "",
-      link: 
-
-
-
+      link: ""
     )
-
-
   end
-
-
 end
 
 

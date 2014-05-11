@@ -38,22 +38,10 @@
     </div>
     <div class="col-md-6">
       <h2>Current Events</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor pulvinar varius. Ut varius lacus et diam ultrices mattis. Vivamus
-        lobortis ornare massa ac porttitor. Praesent a nulla lectus. Quisque tincidunt mi lectus, sit amet vehicula eros eleifend ultricies. Nullam eu mi
-        ipsum. Nulla eget sollicitudin nulla. Quisque eget magna vitae elit ultrices laoreet. Nullam congue massa non aliquet elementum. Etiam augue sapien,
-        rutrum quis lacinia ut,
-        mattis quis nibh. Fusce semper risus eu tristique gravida. Morbi rutrum imperdiet tincidunt. Curabitur non velit eros. Nunc sed sagittis erat.
-        Praesent vulputate semper ante ut sagittis.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor pulvinar varius. Ut varius lacus et diam ultrices mattis. Vivamus
-        lobortis ornare massa ac porttitor. Praesent a nulla lectus. Quisque tincidunt mi lectus, sit amet vehicula eros eleifend ultricies. Nullam eu mi
-        ipsum. Nulla eget sollicitudin nulla. Quisque eget magna vitae elit ultrices laoreet. Nullam congue massa non aliquet elementum. Etiam augue sapien,
-        rutrum quis lacinia ut,
-        mattis quis nibh. Fusce semper risus eu tristique gravida. Morbi rutrum imperdiet tincidunt. Curabitur non velit eros. Nunc sed sagittis erat.
-        Praesent vulputate semper ante ut sagittis.
-      </p>
+        <% @events.each do |e|  %>
+          <h3><%= e.title %></h3>
+          <p><%= e.description %></p>
+          <% end %>
     </div>
     <div class="col-md-3">
       <h2>Upcoming Events</h2>
