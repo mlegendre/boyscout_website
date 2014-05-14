@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'bootstrap-wysihtml5-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'rails', '4.0.1'
 gem 'pg'

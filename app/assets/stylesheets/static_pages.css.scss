@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
+
+
 .inner-item {
   text-align: center;
 
@@ -12,7 +14,14 @@
     width:auto;
     overflow:hidden;
   }
+}
 
+body {
+  padding-bottom: 70px;
+}
+
+footer{
+  height:50px;
 
 }
 

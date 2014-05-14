@@ -6,8 +6,7 @@ class StaticPagesController < ApplicationController
       File.basename(i)
     end
 
-    @events=Event.all
-
+    @events=Event.all.order('created_at DESC').limit(10)
 
   end
 
