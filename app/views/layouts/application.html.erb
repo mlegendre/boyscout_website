@@ -14,7 +14,12 @@
         <li><%= link_to 'Troop 144', '/' %></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
-        <li><a href="#">Sign In/Login</a></li>
+        <li><%= link_to 'Sign up Now!' , '/users/sign_up' %></li>
+        <% if signed_in?(:user) %>
+            <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+           <% else %>
+            <li><%= link_to 'Login', new_user_session_path, :method => :post %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
