@@ -9,7 +9,7 @@ describe "static page" do
 
   it "should go to the forms page" do
     visit '/forms'
-    page.has_title?("Forms Page")
+    page.has_title?("Form Page")
 
   end
 

@@ -15,6 +15,7 @@ gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth', '1.1.0'
 gem 'omniauth-google-oauth2'
 gem 'devise'
+gem 'cancan'
 
 # rspec-rails environment
 group :development, :test do

@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+
+
   def index
     images_arry = Dir.glob('app/assets/images/carousel_images/*')
     @images = images_arry.map do |i|
@@ -11,11 +13,11 @@ class StaticPagesController < ApplicationController
   end
 
   def forms
-    @forms = Forms.all
+    @forms = Form.all
   end
 
   def badges
-    @badges=Badges.all
+    @badges=Badge.all
   end
 
  end

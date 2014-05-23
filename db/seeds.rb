@@ -17,7 +17,7 @@ badge_location='badge_images'
   end
 
   images.each do |j|
-    Badges.create(
+    Badge.create(
       name: j.gsub("_badge.jpg","").gsub("_", " ") ,
       link_to_badge_icon: "#{badge_location}/#{j}",
       link_to_badge_pdf_form: j.gsub("_badge.jpg",".pdf").gsub("_", "-"),
@@ -35,7 +35,7 @@ def forms_creation
   end
 
   forms.each do |f|
-    Forms.create(
+    Form.create(
       name: f.gsub(".pdf"),
       description: "",
       link: ""
